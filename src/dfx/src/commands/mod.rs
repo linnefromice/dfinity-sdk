@@ -1,4 +1,4 @@
-use crate::commands::completion::CompletionOpts;
+// use crate::commands::completion::CompletionOpts;
 use crate::lib::environment::Environment;
 use crate::lib::error::DfxResult;
 use anyhow::bail;
@@ -8,7 +8,7 @@ mod beta;
 mod build;
 mod cache;
 mod canister;
-mod completion;
+// mod completion;
 mod cycles;
 mod deploy;
 mod deps;
@@ -38,7 +38,7 @@ pub enum DfxCommand {
     Build(build::CanisterBuildOpts),
     Cache(cache::CacheOpts),
     Canister(canister::CanisterOpts),
-    Completion(CompletionOpts),
+    // Completion(CompletionOpts),
     Cycles(cycles::CyclesOpts),
     Deploy(deploy::DeployOpts),
     Deps(deps::DepsOpts),
@@ -71,7 +71,7 @@ pub fn exec(env: &dyn Environment, cmd: DfxCommand) -> DfxResult {
         DfxCommand::Build(v) => build::exec(env, v),
         DfxCommand::Cache(v) => cache::exec(env, v),
         DfxCommand::Canister(v) => canister::exec(env, v),
-        DfxCommand::Completion(v) => completion::exec(env, v),
+        // DfxCommand::Completion(v) => completion::exec(env, v),
         DfxCommand::Cycles(v) => cycles::exec(env, v),
         DfxCommand::Deploy(v) => deploy::exec(env, v),
         DfxCommand::Deps(v) => deps::exec(env, v),
