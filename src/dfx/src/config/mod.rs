@@ -5,10 +5,12 @@ pub mod cache;
 
 lazy_static! {
     // This expect cannot happen, we make sure that CARGO_PKG_VERSION is correct.
-    static ref VERSION: Version =
-        Version::parse(env!("CARGO_PKG_VERSION")).expect("Cannot parse version.");
+    // static ref VERSION: Version =
+    //     Version::parse(env!("CARGO_PKG_VERSION")).expect("Cannot parse version.");
+    static ref VERSION: Version = Version::parse("1.0.0").unwrap();
 
-    static ref VERSION_STR: String = env!("CARGO_PKG_VERSION").to_string();
+    // static ref VERSION_STR: String = env!("CARGO_PKG_VERSION").to_string();
+    static ref VERSION_STR: String = "1.0.0".to_string();
 }
 
 /// Returns the version of DFX that was built.
